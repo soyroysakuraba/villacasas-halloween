@@ -28,14 +28,14 @@
 <style>
 html,body{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='36' viewBox='0 0 32 36'%3E%3Cpath d='M5 3L25 20L15 21L10 31Z' fill='%23ff9b48' stroke='%2324092e' stroke-width='2'/%3E%3Cpath d='M10 10L17 17M12 13L13 21' stroke='%23861f35' stroke-width='2'/%3E%3C/svg%3E") 5 3,auto}a,button{cursor:pointer}.fog{z-index:2;mask-image:linear-gradient(transparent 62%,black 100%)}.fog::before{bottom:-18%;height:58%;opacity:.7}.fog::after{bottom:-10%;height:35%;opacity:.38}.frame{z-index:3}.hero h1{letter-spacing:-.025em}.card{box-shadow:0 24px 60px #0009}.brand{padding:8px 10px;background:#08050c88;border-radius:12px;border:1px solid #ff9b4826}header{gap:10px}.cta:focus-visible,header a:focus-visible{outline:3px solid #fff;outline-offset:5px}footer{position:relative;z-index:3}
 </style><style>@media(max-width:560px){header{flex-wrap:wrap}.brand{max-width:100%}.hero h1{font-size:clamp(1.9rem,8.6vw,3rem);overflow-wrap:anywhere}.hero{padding-top:24px;min-height:440px}.card img{height:auto;aspect-ratio:3/4}.cta{min-height:48px}.vote{padding:22px 10px}.fog{opacity:.65}}@media(pointer:coarse){html,body{cursor:auto}}</style><style>.vote-grid{display:block;max-width:780px;margin:0 auto}.vote-head{margin-left:auto;margin-right:auto;text-align:center}.bat-flight{position:fixed;left:-100px;top:18vh;z-index:8;pointer-events:none;font-size:42px;filter:drop-shadow(0 5px 8px #0009);animation:bat-cross 24s linear infinite;opacity:0}.bat-flight.second{top:42vh;font-size:28px;animation-delay:11s;animation-duration:31s}@keyframes bat-cross{0%,74%{transform:translate(-120px,0) rotate(-12deg);opacity:0}75%{opacity:.9}80%{transform:translate(25vw,-35px) rotate(8deg)}87%{transform:translate(60vw,25px) rotate(-10deg)}94%{transform:translate(105vw,-25px) rotate(8deg);opacity:.9}95%,100%{transform:translate(120vw,0);opacity:0}}@media(prefers-reduced-motion:reduce){.bat-flight{display:none}}</style>
-</head>
+<style>.hero h1{width:100%;max-width:none;font-size:clamp(1.2rem,5.15vw,4.2rem);letter-spacing:-.035em}.hero h1 span,.hero h1 em{display:block;white-space:nowrap}@media(max-width:560px){.hero h1{font-size:clamp(1rem,5.05vw,1.8rem);overflow-wrap:normal;line-height:1.6}}</style></head>
 <body><span class="bat-flight" aria-hidden="true">🦇</span><span class="bat-flight second" aria-hidden="true">🦇</span>
   <div class="grain" aria-hidden="true"></div><div class="fog" aria-hidden="true"></div><div class="moon" aria-hidden="true"></div>
   <header><div class="brand"><span class="logo" role="img" aria-label="Villacasas"></span><span>✦ HALLOWEEN</span></div><a href="#votar">Ir a votar ↓</a></header>
   <main>
     <section class="hero" aria-labelledby="hero-title">
       <p class="eyebrow">Concurso de puertas · Halloween Villacasas</p>
-      <h1 id="hero-title">ELIGE TU <em>PUERTA FAVORITA</em></h1>
+      <h1 id="hero-title"><span>ELIGE TU</span><em>PUERTA FAVORITA</em></h1>
       <p>Explora las decoraciones, entra en ambiente y decide cuál merece ganar. Tu voto se registrará en el formulario oficial de Villacasas.</p>
       <a class="cta" href="#votar">🎃 Votar por mi favorita <span aria-hidden="true">↗</span></a>
       <div class="bats" aria-hidden="true">🦇</div>
@@ -76,6 +76,7 @@ viewer.addEventListener('click',e=>{if(e.target===viewer){const b=viewer.getBoun
 viewer.addEventListener('close',()=>lastPhoto?.focus());
 </script></body>
 </html>
+
 
 
 
