@@ -34,7 +34,7 @@ html,body{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
   <main>
     <section class="hero" aria-labelledby="hero-title">
       <p class="eyebrow">Concurso de puertas · Halloween Villacasas</p>
-      <h1 id="hero-title">Elige la puerta <em>más aterradora</em></h1>
+      <h1 id="hero-title">ELIGE TU <em>PUERTA FAVORITA</em></h1>
       <p>Explora las decoraciones, entra en ambiente y decide cuál merece ganar. Tu voto se registrará en el formulario oficial de Villacasas.</p>
       <a class="cta" href="#votar">🎃 Votar por mi favorita <span aria-hidden="true">↗</span></a>
       <div class="bats" aria-hidden="true">🦇</div>
@@ -62,7 +62,23 @@ html,body{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
     </section>
   </main>
   <footer>Halloween Villacasas · Concurso de puertas</footer>
-</body>
+<style>
+.card,.photo-rail figure{cursor:zoom-in}.photo-view{border:1px solid #f59b63;background:#110817f5;color:white;padding:18px;border-radius:20px;max-width:94vw;max-height:94dvh;box-shadow:0 0 75px #b64cff66,0 0 120px #fa622f44;overflow:auto}.photo-view[open]{animation:apparition .45s ease-out}.photo-view::backdrop{background:#050109e8;backdrop-filter:blur(10px)}.photo-view img{display:block;max-width:85vw;max-height:76dvh;width:auto;height:auto;object-fit:contain;margin:auto;border-radius:10px}.photo-view button{display:block;margin:0 0 12px auto;min-width:44px;min-height:44px;border:1px solid #ffaf67;background:#2b1435;color:white;border-radius:50%;font-size:24px;cursor:pointer}.photo-view p{text-align:center;margin:12px 0 0;font-weight:700}@keyframes apparition{from{opacity:0;transform:scale(.85) translateY(25px);filter:blur(12px)}to{opacity:1;transform:none;filter:none}}@media(prefers-reduced-motion:reduce){.photo-view[open]{animation:none}}
+</style>
+<dialog class="photo-view" aria-label="Fotografía completa"><button type="button" aria-label="Cerrar fotografía">×</button><img alt=""><p></p></dialog>
+<script>
+const viewer=document.querySelector('.photo-view');
+let lastPhoto;
+document.querySelectorAll('.card,.photo-rail figure').forEach(card=>{
+ card.tabIndex=0;card.setAttribute('role','button');card.setAttribute('aria-label','Ver foto completa: '+card.querySelector('img').alt);
+ const open=()=>{const photo=card.querySelector('img');lastPhoto=card;viewer.querySelector('img').src=photo.src;viewer.querySelector('img').alt=photo.alt;viewer.querySelector('p').textContent=card.querySelector('h3,figcaption').textContent;viewer.showModal();};
+ card.addEventListener('click',open);card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open();}});
+});
+viewer.querySelector('button').addEventListener('click',()=>viewer.close());
+viewer.addEventListener('click',e=>{if(e.target===viewer){const b=viewer.getBoundingClientRect();if(e.clientX<b.left||e.clientX>b.right||e.clientY<b.top||e.clientY>b.bottom)viewer.close();}});
+viewer.addEventListener('close',()=>lastPhoto?.focus());
+</script></body>
 </html>
+
 
 
